@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C9862D8-1727-4809-B034-5C59B9D09579}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectX_DarkRift2_MFS</RootNamespace>
+    <AssemblyName>ProjectX_DarkRift2_MFS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DarkRift">
+      <HintPath>D:\Development\GitHub\DarkRift2_ServerPlugins\sources\DarkRift.dll</HintPath>
+    </Reference>
+    <Reference Include="DarkRift.Client">
+      <HintPath>D:\Development\GitHub\DarkRift2_ServerPlugins\sources\DarkRift.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DarkRift.Server">
+      <HintPath>D:\Development\GitHub\DarkRift2_ServerPlugins\sources\DarkRift.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MathFloat, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathFloat.1.0.1.0\lib\net20\MathFloat.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.11\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication\AuthenticationPlugin.cs" />
+    <Compile Include="Authentication\EncryptionData.cs" />
+    <Compile Include="Database\MySQLPlugin.cs" />
+    <Compile Include="Database\PasswordResetData.cs" />
+    <Compile Include="Database\SqlAccountData.cs" />
+    <Compile Include="Game\Components\BuffComponent.cs" />
+    <Compile Include="Game\Components\SpawnComponent.cs" />
+    <Compile Include="Game\Components\Component.cs" />
+    <Compile Include="Game\Components\NavigationComponent.cs" />
+    <Compile Include="Game\Entities\Entity.cs" />
+    <Compile Include="Game\Entities\Monster.cs" />
+    <Compile Include="Game\Entities\Player.cs" />
+    <Compile Include="Game\GamePlugin.cs" />
+    <Compile Include="Mail\MailPlugin.cs" />
+    <Compile Include="RoomHandler\RegisteredRoom.cs" />
+    <Compile Include="RoomHandler\RoomHandlerPlugin.cs" />
+    <Compile Include="Room\RoomPlugin.cs" />
+    <Compile Include="ServerPluginBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpawnerHandler\RegisteredSpawner.cs" />
+    <Compile Include="SpawnerHandler\SpawnerHandlerPlugin.cs" />
+    <Compile Include="SpawnerHandler\SpawnTask.cs" />
+    <Compile Include="Time\TimePlugin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Game\Levels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RecastDetour\RecastDetour.csproj">
+      <Project>{7afa0554-3d59-48d1-99a4-fb5d15e643ff}</Project>
+      <Name>RecastDetour</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{ab7d6ebf-d4eb-4581-adb8-e3c99b4089ed}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

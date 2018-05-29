@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB7D6EBF-D4EB-4581-ADB8-E3C99B4089ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities</RootNamespace>
+    <AssemblyName>Utilities</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DarkRift">
+      <HintPath>D:\Development\GitHub\DarkRift2_ServerPlugins\sources\DarkRift.dll</HintPath>
+    </Reference>
+    <Reference Include="DarkRift.Client">
+      <HintPath>D:\Development\GitHub\DarkRift2_ServerPlugins\sources\DarkRift.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DarkRift.Server">
+      <HintPath>D:\Development\GitHub\DarkRift2_ServerPlugins\sources\DarkRift.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArgNames.cs" />
+    <Compile Include="Conversion\BigEndianBitConverter.cs" />
+    <Compile Include="Conversion\DoubleConverter.cs" />
+    <Compile Include="Conversion\EndianBitConverter.cs" />
+    <Compile Include="Conversion\Endianness.cs" />
+    <Compile Include="Conversion\LittleEndianBitConverter.cs" />
+    <Compile Include="EntityState.cs" />
+    <Compile Include="Extensions\SerializationExtensions.cs" />
+    <Compile Include="Game\Vector3.cs" />
+    <Compile Include="IO\EndianBinaryReader.cs" />
+    <Compile Include="IO\EndianBinaryWriter.cs" />
+    <Compile Include="Messages\NotificationMessage.cs" />
+    <Compile Include="Messages\Notifications\ProcessKilledMessage .cs" />
+    <Compile Include="Messages\Notifications\SpawnFinalizedMessage.cs" />
+    <Compile Include="Messages\Requests\ResetPasswordMessage.cs" />
+    <Compile Include="Messages\Requests\RequestFromUserMessage.cs" />
+    <Compile Include="Messages\Requests\RegisterSpawnedProcessMessage.cs" />
+    <Compile Include="Messages\Requests\ConfirmEmailMessage.cs" />
+    <Compile Include="Messages\ResponseMessage.cs" />
+    <Compile Include="Messages\RequestMessage.cs" />
+    <Compile Include="Messages\Responses\SpawnFromMasterToSpawnerFailedMessage.cs" />
+    <Compile Include="Messages\Responses\RegisterSpawnerSuccessMessage.cs" />
+    <Compile Include="Messages\Responses\RegisterRoomSuccessMessage.cs" />
+    <Compile Include="Messages\Responses\LoginSuccessMessage.cs" />
+    <Compile Include="Messages\Responses\FailedMessage.cs" />
+    <Compile Include="Messages\Responses\ClientSpawnSuccessMessage.cs" />
+    <Compile Include="Messages\Responses\SpawnFromMasterToSpawnerSuccessMessage.cs" />
+    <Compile Include="NetworkEntity.cs" />
+    <Compile Include="Packets\AckNavigateToPacket.cs" />
+    <Compile Include="Packets\BytePacket.cs" />
+    <Compile Include="Packets\BytesPacket.cs" />
+    <Compile Include="Packets\ChangStatePacket.cs" />
+    <Compile Include="Packets\EntityPacket.cs" />
+    <Compile Include="Packets\FloatPacket.cs" />
+    <Compile Include="Packets\GameInfoPacket.cs" />
+    <Compile Include="Packets\IntPacket.cs" />
+    <Compile Include="Packets\KillSpawnedProcessPacket.cs" />
+    <Compile Include="Packets\NavigateToPacket.cs" />
+    <Compile Include="Packets\PositionPacket.cs" />
+    <Compile Include="Packets\RoomAccessProvideCheckPacket.cs" />
+    <Compile Include="Packets\RoomAccessRequestPacket.cs" />
+    <Compile Include="Packets\RoomAccessValidatedPacket.cs" />
+    <Compile Include="Packets\RoomAccessValidatePacket.cs" />
+    <Compile Include="Packets\SaveRoomOptionsPacket.cs" />
+    <Compile Include="Packets\SpawnStatusPacket.cs" />
+    <Compile Include="Packets\StringPacket.cs" />
+    <Compile Include="Packets\UsernameAndPeerIdPacket.cs" />
+    <Compile Include="Packets\SpawnRequestPacket.cs" />
+    <Compile Include="Packets\RoomAccessPacket.cs" />
+    <Compile Include="Packets\PlayerLeftRoomPacket.cs" />
+    <Compile Include="SmoothPath.cs" />
+    <Compile Include="SpawnerOptions.cs" />
+    <Compile Include="MessageTags.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseStatus.cs" />
+    <Compile Include="RoomOptions.cs" />
+    <Compile Include="Security.cs" />
+    <Compile Include="SpawnStatus.cs" />
+    <Compile Include="WorldOptions.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
